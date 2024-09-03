@@ -1,10 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const AlumniForm = () => {
+const AluminiForm = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Perform form validation or API request here if needed
+    
+    // After successful sign up, navigate to the next alumini page
+    navigate('/alumni'); // Replace '/alumini' with the correct path to your next page
+  };
+
   return (
     <div className="flex flex-col font-semibold text-gray-900 p-6 max-w-md mx-auto">
-      <h1 className="text-2xl mb-6 text-center">Alumni Signup Form</h1>
-      <form className="space-y-4">
+      <h1 className="text-2xl mb-6 text-center">Alumini Signup Form</h1>
+      <form className="space-y-4" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="firstName" className="block mb-2">First Name</label>
           <input type="text" id="firstName" name="firstName" className="w-full p-2 border border-gray-300 rounded" />
@@ -64,8 +75,11 @@ const AlumniForm = () => {
           <label htmlFor="confirmPassword" className="block mb-2">Confirm Password</label>
           <input type="password" id="confirmPassword" name="confirmPassword" className="w-full p-2 border border-gray-300 rounded" />
         </div>
-
-        <button type="submit" className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+        
+        <button
+          type="submit" onClick={handleSubmit}
+          className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+        >
           Sign Up
         </button>
       </form>
@@ -73,4 +87,4 @@ const AlumniForm = () => {
   );
 };
 
-export default AlumniForm;
+export default AluminiForm;
