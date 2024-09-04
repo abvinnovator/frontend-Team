@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar'; 
 
-import Home from './components/Home'; 
+
 import Signup from './Auth/Signup';
 import Login from './Auth/Login';
 import Studentform from './Users/Roles/Studentform';
@@ -15,6 +15,7 @@ import StudentDashBoard from './Users/Roles/Student/StudentDashBoard';
 import Forums from './Users/Roles/Student/Forums';
 import UserDashboard from './Users/Roles/Student/Forums/UserRequest';
 import AdminDashboard from './Users/Roles/Student/Forums/AdminDashboard';
+import Home from './components/Home';
 
 const App = () => {
   return (
